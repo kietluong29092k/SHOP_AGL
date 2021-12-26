@@ -1,0 +1,73 @@
+<app-header></app-header>
+<app-back-to-top></app-back-to-top>
+<div id = "iner">
+     <img  class="vi-tri" src = "https://cf.shopee.vn/file/3e412168508fb9f8d6df5b89d5fafca5_xxhdpi"/>
+
+   <div>
+       <h2 class="color-1">SẢN PHẨM BÁN CHẠY</h2>
+       <img src = "https://cayxinh.vn/wp-content/uploads/2019/07/title-divide.png"/>
+   </div>
+   <div class = "iner-1">
+     <ul >  
+           <li class="num-ket" *ngFor="let a of spbc">
+          <div class="phan-tang-1">
+                   <img height="130px"  class="img-chinh" [src] = "a.img"/>
+         <h4 class="h4-2" [routerLink] = "['view',a.id]"><p>{{a.tensp}}</p></h4> 
+                   <span class="span-1"> {{a.giaban | number}}₫</span>
+               </div> 
+           </li>
+
+       </ul>
+       <div class="rout-1">
+       <h2 class="color-2">SẢN PHẨM TIÊU BIỂU</h2>
+       <ul> 
+        <li class="li-1" [routerLink] = "['/viewList',4]">Giấy dán tường phòng ngủ</li>
+        <li class="li-1" [routerLink] = "['/viewList',5]">Giấy dán tường ITALINO-Ý</li>
+        <li class="li-1" [routerLink] = "['/viewList',6]">Giấy dán tường Nhật Bản</li>
+           <li class="li-1"><button class = "run-button">Xem tất cả</button></li>
+       </ul>
+       
+      <div> 
+      </div>
+   </div>
+   <div class = "rout-2">
+   <ul>
+    <li class="nat-2" *ngFor="let a of sptb">
+        <figure> <img class="img-3" width="100%" height="200px" [src] = "a.img"/></figure>
+        <h4 class="h4-1"><p [routerLink] = "['view',a.id]">{{a.tensp}}</p><br/><span class="span-2"> {{a.giaban | number}}₫</span></h4>         
+    </li>
+</ul>
+   </div>
+   <div class="rout-1">
+       <h2 class="color-2">SẢN PHẨM MỚI</h2>
+       <ul>
+        <li class="li-1" [routerLink] = "['/viewList',4]">Giấy dán tường phòng ngủ</li>
+        <li class="li-1" [routerLink] = "['/viewList',5]">Giấy dán tường ITALINO-Ý</li>
+        <li class="li-1" [routerLink] = "['/viewList',6]">Giấy dán tường Nhật Bản</li>
+        <li class="li-1" [routerLink] = "['/viewList',7]">Giấy dán tường 3D Hàn Quốc</li>
+           <li class="li-1"><button class = "run-button"> Xem tất cả</button></li>
+       </ul>
+       
+      <div> 
+      </div>
+      
+   </div>
+   <div class = "rout-2">
+    <ul>
+        <li class="nat-2" *ngFor="let a of spm">
+            <figure> <img class="img-3" width="100%" height="200px" [src] = "a.img"/></figure>
+    <h4 class="h4-1"><p [routerLink] = "['view',a.id]">{{a.tensp}}</p><br/><span class="span-2"> {{a.giaban | number}}₫</span></h4>         
+                 </li>
+           </ul>
+    
+   </div>
+   <ul>  
+           <li class="num-ket-1">
+                   <h4 class="h4-2-1">Xem thêm</h4>
+           </li>
+       </ul> 
+   </div> 
+ 
+   
+</div>
+<app-footer></app-footer>

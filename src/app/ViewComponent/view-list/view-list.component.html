@@ -1,0 +1,11 @@
+<app-heade-list></app-heade-list>
+<div class = "iner-1">
+  <div class = "rout-2">
+  <ul>
+   <li class="nat-2" *ngFor="let a of sptb">
+       <figure> <img class="img-3" width="100%" height="200px" [src] = "a.img"/></figure>
+       <h4 class="h4-1"><p [routerLink] = "['/view',a.id]">{{a.tensp}}</p><br/><span class="span-2"> {{a.giaban | number}}₫</span></h4>         
+   </li>
+</ul>
+  </div>
+  </div> 

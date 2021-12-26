@@ -1,0 +1,42 @@
+<div id = "main-1">
+    <div class = "run-dev-1">
+    <ul>
+        <li>Hotline: 0359101000</li>
+        <li>Địa Chỉ: 759 Quang Trung - Phường 12 - Gò Vấp</li>
+        <li class="run-dev">Email: kietluong2909@gmail.com </li>
+     <li [routerLink] = "['/cart']">Kiểm tra đơn hàng</li>
+    </ul>
+    </div>
+   <div class="chung">
+   <div class="img-1">
+
+   <img width = "255px" height="70px"  class="img-2" src = "https://nhaxinhdecor.com/wp-content/uploads/2020/02/nha-xinh-decor-2.png"/>
+
+    </div>
+    <div class="input-1">
+        <form [formGroup] = "fileForm">
+            <input class="reddd" formControlName = "tensp" value="tensp" type ="text" placeholder="Tên sản phẩm" /><button type="submit" class="red-buddi" [routerLink] = "['/show',this.fileForm.controls['tensp'].value]">Find</button>
+        </form>
+    </div>
+    <div class="maggin">
+        <h1 class="text-1">Chăm sóc khách hàng</h1>
+        <h3 class="text-2">035-910-1000</h3>
+    </div>
+   </div>
+  <div class="drop-down">
+     <ul>
+     <li class="btn-2">
+         <h3  style="position: relative; bottom: 5px;">Doanh Mục</h3>
+         </li>
+         <li class="btn-1" [routerLink] = "['/']"><p>Trang Chủ</p></li>
+         <li class="btn-1"><p>Giới thiệu</p></li>
+         <li class="btn-1"><p>Kiến thức</p></li>
+         <li class="btn-1"><p>Tin tức</p></li>
+         <li class="btn-1" [routerLink] = "['/cart']"><p>Mua hàng</p></li>
+         <li *ngIf="isLogin" class="btn-1" (click) = "logout()"><p>Logout</p></li> 
+         <li *ngIf="isNotLogin" class="btn-1" [routerLink] = "['/login']" ><p>Login</p></li> 
+     </ul>
+  </div>
+ 
+ 
+</div>

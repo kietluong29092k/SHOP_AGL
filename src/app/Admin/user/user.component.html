@@ -1,0 +1,121 @@
+<app-header-admin></app-header-admin>
+<div class="container-fluid page-body-wrapper">
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" >
+              <i class="mdi mdi-home menu-icon"></i>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink] = "['/showview']">
+              <i class="mdi mdi-view-headline menu-icon" ></i>
+              <span class="menu-title" >Doanh mục sản phẩm</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]= "['/checkoutCart']">
+              <i class="mdi mdi-chart-pie menu-icon" ></i>
+              <span class="menu-title" >Quản lý đơn đặt hàng</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]= "['/update']">
+              <i class="mdi mdi-grid-large menu-icon"></i>
+              <span class="menu-title" >Quản lý sản phẩm</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]= "['/user']">
+              <i class="mdi mdi-emoticon menu-icon"></i>
+              <span class="menu-title" >Quản lý khách hàng</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/']">
+              <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+              <span class="menu-title" >Trang chủ cửa hàng</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="d-flex justify-content-between flex-wrap">
+                <div class="d-flex align-items-end flex-wrap">
+                    <div class="row">
+                        <div class="col-md-12 stretch-card">
+                          <div class="card">
+                            <div class="card-body">
+                              <div class="onsjw" *ngIf = "experr">
+                                  <div class="card-body"  >
+                                    <h4 class="card-title" style="font-size: 20px;">DANH SÁCH ĐƠN ĐẶT</h4>
+                                    <img (click)="close()" style="width: 50px; height: 50px; position: relative; left: 56em; bottom: 4em; cursor: pointer;" src = "https://inhoguom.com/sites/default/files/pictures/close_blue.png"/>           
+                                    <div class="table-responsive">
+                                      <div id="recent-purchases-listing_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><table id="recent-purchases-listing" class="table dataTable no-footer" role="grid">
+                                        <thead>
+                                          <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="recent-purchases-listing" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 160.863px;">ID</th>
+                                            <th class="sorting" tabindex="0" aria-controls="recent-purchases-listing" rowspan="1" colspan="1" aria-label="Status report: activate to sort column ascending" style="width: 206.425px;">Tên khách hàng</th>
+                                            <th class="sorting" tabindex="0" aria-controls="recent-purchases-listing" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 144.65px;">Số điện thoại</th>
+                                            <th class="sorting" tabindex="0" aria-controls="recent-purchases-listing" rowspan="1" colspan="1" aria-label="Price: activate to sort column ascending" style="width: 68.875px;">Ngày đặt</th>
+                                            <th class="sorting" tabindex="0" aria-controls="recent-purchases-listing" rowspan="1" colspan="1" aria-label="Date: activate to sort column ascending" style="width: 107.813px;">Tình trạng</th>
+                                        </thead>
+                                        <tbody>                    
+                                        <tr role="row" class="odd" *ngFor = "let a of dsmua">
+                                              <td class="sorting_1"> {{a.id}}</td>
+                                              <td>{{a.name}}</td>
+                                              <td>0{{a.phone}}</td>
+                                              <td>{{a.ngaytao | date:'short'}}</td>
+                                              <td><label class="badge badge-danger" *ngIf = "a.trangthai === 0">Chờ duyệt</label>
+                                                <label class="badge badge-success" *ngIf = "a.trangthai === 1">Đã xác nhận</label></td>
+                                          </tr></tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                  <div class="row"><div class="col-sm-12 col-md-5"></div><div class="col-sm-12 col-md-7"></div></div></div>
+                                    </div>
+                                  </div>    
+                               </div>
+                                <p class="card-title" style="font-size: 21px;">DANH SÁCH KHÁCH HÀNG</p>
+                                <div class="table-responsive">
+                                  <div id="recent-purchases-listing_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><table id="recent-purchases-listing" class="table dataTable no-footer" role="grid">
+                                    <thead>
+                                      <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="recent-purchases-listing" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 50.863px;">ID</th>
+                                        <th class="sorting" tabindex="0" aria-controls="recent-purchases-listing" rowspan="1" colspan="1" aria-label="Status report: activate to sort column ascending" style="width: 206.425px;">Tên khách hàng</th>
+                                        <th class="sorting" tabindex="0" aria-controls="recent-purchases-listing" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 144.65px;">Số điện thoại</th>
+                                        <th class="sorting" tabindex="0" aria-controls="recent-purchases-listing" rowspan="1" colspan="1" aria-label="Price: activate to sort column ascending" style="width: 68.875px;">Roles</th>
+                                        <th class="sorting" tabindex="0" aria-controls="recent-purchases-listing" rowspan="1" colspan="1" aria-label="Date: activate to sort column ascending" style="width: 107.813px;">Tình trạng</th>
+                                        <th class="sorting" tabindex="0" aria-controls="recent-purchases-listing" rowspan="1" colspan="1" aria-label="Gross amount: activate to sort column ascending" style="width: 158.1px;">Xử lý</th></tr>
+                                    </thead>
+                                    <tbody>                    
+                                    <tr role="row" class="odd" *ngFor = "let a of dskh">
+                                          <td class="sorting_1"> {{a.id}}</td>
+                                          <td>{{a.name}}</td>
+                                          <td>0{{a.phone}}</td>
+                                          <td>{{a.user}}</td>
+                                          <td><label class="badge badge-success">Đang hoạt động</label></td>
+                                          <td> <button type="submit" style="height:40px;" class="btn btn-primary mr-2" (click) = "delete(a.id)">DELETE</button>
+                                            <button type="submit" style="height:40px;" (click)="view(a.id)" class="btn btn-primary mr-2">VIEW</button></td>
+                                      </tr></tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="row"><div class="col-sm-12 col-md-5"></div><div class="col-sm-12 col-md-7"></div></div></div>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+</div>

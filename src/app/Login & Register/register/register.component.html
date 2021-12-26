@@ -1,0 +1,17 @@
+<div class= "index">
+    <br/>
+    <h1>ĐĂNG KÝ</h1>
+    <form class= "form" [formGroup]="fileForm" (ngSubmit) = "onSubmit()">
+      <label class="index-1">Họ và tên:</label><br/>
+      <input formControlName = "name" required class="in-1" type = "text"/><br/><br/>
+      <label class="index-1">Số điện thoại:</label><br/>
+      <input formControlName = "phone" required class="in-1"type = "text" /><br/><br/>
+      <label class="index-1">Tên đăng nhập:</label><br/>
+      <input formControlName = "username" required class="in-1" type = "text"  /><br/><br/>
+      <label class="index-1">Mật khẩu:</label><br/>
+      <input formControlName = "password" required class="in-1" type = "text" /><br/><br/>
+      <button type="submit" class="btn-lg">Đăng Ký</button>
+    </form>
+    <br/>
+    <a [routerLink] = "['/login']">Quay lại đăng nhập</a>
+</div>
